@@ -13,10 +13,10 @@ const infuraProvider = new ethers.providers.InfuraProvider(network="goerli", API
 const signer = new ethers.Wallet(PRIVATE_KEY, infuraProvider);
 
 //adresses
-const stakingProvider = "0xd5b0a91e1Ab74F0c20b00BD070ef333B36F5B06d";
+const stakingProvider = "0x50F13dbA704fc25804f4858ccF9B535F66A6e879";
 const beneficiary = stakingProvider;
 const authorizer = stakingProvider;
-const operator = "0x875DAdf51Ca83f7E4b4186a78460A7B2d6439f6c";
+const operator = "0x9C7B3e63d1D48c347E9d03D87b9181d7B2Bf3BBf";
 
 // const stakingProvider1 = "0xA65Bf47514e3e6CE8E461315cEd6Ae1eaab2F0D0";
 // const beneficiary1 = "0xA65Bf47514e3e6CE8E461315cEd6Ae1eaab2F0D0";
@@ -67,13 +67,13 @@ async function main() {
     const authAmount = 41000;
     let authAmt = ethers.utils.parseUnits(authAmount.toString(), "ether");
 
-    try{const step2a = await staking.increaseAuthorization(stakingProvider1,ECDSA.address,authAmt,overrides);
+    try{const step2a = await staking.increaseAuthorization(stakingProvider,ECDSA.address,authAmt,overrides);
     await step2a.wait();}
     catch(error){
         console.error(error);
     }
     console.log("++++++++++++++step2a++++++++++++");
-    try{const step2b = await staking.increaseAuthorization(stakingProvider1,Beacon.address,authAmt,overrides);
+    try{const step2b = await staking.increaseAuthorization(stakingProvider,Beacon.address,authAmt,overrides);
     await step2b.wait();}
     catch(error){
         console.error(error);
