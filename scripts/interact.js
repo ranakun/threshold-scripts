@@ -13,10 +13,10 @@ const infuraProvider = new ethers.providers.InfuraProvider(network="goerli", API
 const signer = new ethers.Wallet(PRIVATE_KEY, infuraProvider);
 
 //adresses
-const stakingProvider = "0x50F13dbA704fc25804f4858ccF9B535F66A6e879";
+const stakingProvider = "0xaB66F02293abBa68a87126AA9221bAe48eee23dA";
 const beneficiary = stakingProvider;
 const authorizer = stakingProvider;
-const operator = "0x9C7B3e63d1D48c347E9d03D87b9181d7B2Bf3BBf";
+const operator = "0xC37C0CB824d5afB99c4A396AD39e43518CC9A306";
 
 // const stakingProvider1 = "0xA65Bf47514e3e6CE8E461315cEd6Ae1eaab2F0D0";
 // const beneficiary1 = "0xA65Bf47514e3e6CE8E461315cEd6Ae1eaab2F0D0";
