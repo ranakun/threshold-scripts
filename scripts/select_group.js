@@ -1,6 +1,8 @@
 const API_KEY = process.env.API_KEY;
-const GOV_PRIVATE_KEY = "544947c9dc5f442688a7d814f01b31e32552d1d1c5426753b052de16e9373725";
+const GOV_PRIVATE_KEY = process.env.PRIVATE_KEY;
 const { ethers } = require("hardhat");
+
+
 
 const infuraProvider = new ethers.providers.InfuraProvider(network="goerli", API_KEY);
 const signer = new ethers.Wallet(GOV_PRIVATE_KEY, infuraProvider);
@@ -9,10 +11,13 @@ var web3 = require('web3');
 const overrides = {gasLimit: 2000000  };
 
 
-const bridge = require("./Bridge.json");
+const rb = require("./RandomBeacon.json");
 const { logger } = require('ethers');
 
-const Bridge = new ethers.Contract(bridge.address,bridge.abi, signer);
+
+const RandomBeacon = new ethers.Contract(rb.address,rb.abi, signer);
+
+
 
 
 async function main() {
@@ -21,19 +26,10 @@ async function main() {
     // console.log("++")
     let authAmt = ethers.utils.parseUnits(authAmount.toString(), "ether");
     
-    // const step1 = await Bridge.requestNewWallet(web3.utils.hexToAscii(0x0000000000000000000000000000000000000000000000000000000000000000),0,0)
-    // const step1 = await Bridge.governance()
-    var activeWalletMainUtxo = {
-        txHash:
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
-        txOutputIndex: 0,
-        txOutputValue: 0,
-      }
-    console.log(Bridge.address,activeWalletMainUtxo)
-    tx = await Bridge.requestNewWallet(activeWalletMainUtxo,overrides)
+        
+    tx = await RandomBeacon.genesis()
     // ([ethers.utils.getAddress(add[5])]);
     await tx.wait();
-   
 }
 main()
 // import { BytesLike } from "ethers"
