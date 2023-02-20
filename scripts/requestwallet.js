@@ -1,5 +1,5 @@
 const API_KEY = process.env.API_KEY;
-const GOV_PRIVATE_KEY = "544947c9dc5f442688a7d814f01b31e32552d1d1c5426753b052de16e9373725";
+const GOV_PRIVATE_KEY = process.env.PRIVATE_KEY;
 const { ethers } = require("hardhat");
 
 const infuraProvider = new ethers.providers.InfuraProvider(network="goerli", API_KEY);
