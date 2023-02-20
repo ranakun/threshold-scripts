@@ -7,16 +7,17 @@ const T_token = require("./T.json")
 const Beacon = require("./RandomBeacon.json")
 const T_Staking = require("./TokenStaking.json")
 const ECDSA = require("./WalletRegistry.json");
+const SortitionPool = require("./BeaconSortitionPool.json");
 const { ethers } = require("hardhat");
 
 const infuraProvider = new ethers.providers.InfuraProvider(network="goerli", API_KEY);
 const signer = new ethers.Wallet(PRIVATE_KEY, infuraProvider);
 
 //adresses
-const stakingProvider = "0xaB66F02293abBa68a87126AA9221bAe48eee23dA";
+const stakingProvider = "0xe68f79190320Cb946520dC23541074C9840c81e3";
 const beneficiary = stakingProvider;
 const authorizer = stakingProvider;
-const operator = "0xC37C0CB824d5afB99c4A396AD39e43518CC9A306";
+const operator = "0x875DAdf51Ca83f7E4b4186a78460A7B2d6439f6c";
 
 // const stakingProvider1 = "0xA65Bf47514e3e6CE8E461315cEd6Ae1eaab2F0D0";
 // const beneficiary1 = "0xA65Bf47514e3e6CE8E461315cEd6Ae1eaab2F0D0";
@@ -29,6 +30,8 @@ const T = new ethers.Contract(T_token.address,T_token.abi, signer);
 const randomBeacon = new ethers.Contract(Beacon.address,Beacon.abi, signer);
 const staking = new ethers.Contract(T_Staking.address,T_Staking.abi, signer);
 const tbtc = new ethers.Contract(ECDSA.address,ECDSA.abi, signer);
+const sortitionPool = new ethers.Contract(SortitionPool.address,SortitionPool.abi, signer);
+
 
 
 // staking.on("AuthorizationIncreased", (stakingProvider, application, fromAmount, authorized) => {
@@ -92,6 +95,9 @@ async function main() {
         console.error(error);
     }
     console.log("++++++++++++++step3b++++++++++++");
+    const step4 = await sortitionPool.addBetaOperators([ethers.utils.getAddress(stakingProvider)],overrides);
+    await step4.wait();
+
 }
 
 main();

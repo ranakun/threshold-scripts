@@ -1,7 +1,7 @@
-const API_KEY = process.env.API_KEY;
-const GOV_PRIVATE_KEY = "80f7dfd8a816220e08c0a8579e534e4fd79e348c440ced3024a232a9a8548130";
-PRIVATE_KEY1 = "58b78ca613b95acbeb87eee2a51e9de5370499ba5acdbbd58367519f7a361cd3";
-PRIVATE_KEY = "282e87d869dc2a767b8c0ac4c4829a1437e4bef4d69bb2c5e072b9111c1149fc";
+ const API_KEY = process.env.API_KEY;
+// const GOV_PRIVATE_KEY = "80f7dfd8a816220e08c0a8579e534e4fd79e348c440ced3024a232a9a8548130";
+// PRIVATE_KEY1 = "58b78ca613b95acbeb87eee2a51e9de5370499ba5acdbbd58367519f7a361cd3";
+const PRIVATE_KEY = "282e87d869dc2a767b8c0ac4c4829a1437e4bef4d69bb2c5e072b9111c1149fc";
 
 // const T_token = require("./T.json")
 const Beacon = require("./RandomBeacon.json");
