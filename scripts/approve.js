@@ -23,7 +23,11 @@ const randomBeacon = new ethers.Contract(rb.address,rb.abi, signer);
 // "0x4FEfd9263102505fA2b5467fb12bb1EafB7AdA8f", //Aasif 2
 // "0xC37C0CB824d5afB99c4A396AD39e43518CC9A306"]; //Pratiksha
 
-const add = ["0x875DAdf51Ca83f7E4b4186a78460A7B2d6439f6c"]
+const add = ["0x9c7b3e63d1d48c347e9d03d87b9181d7b2bf3bbf",
+"0xC37C0CB824d5afB99c4A396AD39e43518CC9A306",
+"0xB6B7D08BF34333f2a2B2219D52253B76a2865819",
+"0x103Ca724C93cae752412f2Af8aA2f5e28fDE1120",
+]
 
 async function main2() {
     const authAmount = 41000;
@@ -36,7 +40,7 @@ async function main2() {
     //     // const step1 = await sortitionPool.addBetaOperators([add[i].address]);
     //     console.log([ethers.utils.getAddress(add[i])])
     //     //*** uncomment the below line and comment above if the above does not work
-    //     const step1 = await sortitionPool.addBetaOperators([ethers.utils.getAddress(add[i])]);
+    //     const step1 = await sortitionPool.addBetaOperators([ethers.utils.getAddress(add[i])],overrides);
     //     await step1.wait();
     //     //Do something
     // }
