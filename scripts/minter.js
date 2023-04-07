@@ -39,7 +39,7 @@ async function listenForDepositRevealed() {
             catch (error) {
                 console.error(error);
             }
-            await new Promise(r => setTimeout(r, 15000));
+            await new Promise(r => setTimeout(r, 60000));
             try {
                 const finMint = await vault.finalizeOptimisticMint(fundingTxHash, fundingOutputIndex)
                 await finMint.wait();
