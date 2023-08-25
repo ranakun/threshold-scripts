@@ -1,5 +1,5 @@
 const API_KEY = process.env.API_KEY;
-const MINTER = process.env.MINTER;
+const MINTER = process.env.PRIVATE_KEY;
 
 const Bridge = require("./Bridge.json");
 const Vault = require("./TBTCVault.json");
