@@ -47,6 +47,15 @@ npx hardhat run scripts/minter.js --network goerli
 ```
 This command will execute the `script.js` script using the Hardhat framework, connecting to the Goerli Network.
 
+## Development
+
+WE also have a demo script that can be used to listen to events and interact with the contracts. This script is located in the `scripts/demo.js` file. To run this script, use the following command:
+
+```bash
+npx hardhat run scripts/demo.js --network goerli
+```
+This command will execute the `demo.js` script using the Hardhat framework, connecting to the Goerli Network. This script can be modified as per the users requirements.
+
 ## Troubleshooting
 
 If you encounter any issues or errors, please link:https://github.com/ranakun/threshold-scripts/issues[open an issue] on this repository. Provide as much detail as possible to help us assist you effectively.
