@@ -49,7 +49,7 @@ This command will execute the `script.js` script using the Hardhat framework, co
 
 ## Development
 
-WE also have a demo script that can be used to listen to events and interact with the contracts. This script is located in the `scripts/demo.js` file. To run this script, use the following command:
+We also have a demo script that can be used to listen to events and interact with the contracts. This script is located in the `scripts/demo.js` file. To run this script, use the following command:
 
 ```bash
 npx hardhat run scripts/demo.js --network goerli
@@ -58,7 +58,7 @@ This command will execute the `demo.js` script using the Hardhat framework, conn
 
 ## Troubleshooting
 
-If you encounter any issues or errors, please link:https://github.com/ranakun/threshold-scripts/issues[open an issue] on this repository. Provide as much detail as possible to help us assist you effectively.
+If you encounter any issues or errors, please link:https://github.com/ranakun/threshold-scripts/issues [open an issue] on this repository. Provide as much detail as possible to help us assist you effectively.
 
 ## License
 
