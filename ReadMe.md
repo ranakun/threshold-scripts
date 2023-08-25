@@ -45,7 +45,7 @@ Run the interaction script with the following command:
 ```bash
 npx hardhat run scripts/minter.js --network goerli
 ```
-This command will execute the `interact.js` script using the Hardhat framework, connecting to the Goerli Network.
+This command will execute the `script.js` script using the Hardhat framework, connecting to the Goerli Network.
 
 ## Troubleshooting
 
